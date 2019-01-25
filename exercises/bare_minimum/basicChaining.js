@@ -28,8 +28,8 @@ var writeFileAsync = Promise.promisify(writeFile);
 
 var fetchProfileAndWriteToFile = function(readFilePath, writeFilePath) {
   return promiseConstructors.pluckFirstLineFromFileAsync(readFilePath)
-  .then((username) => promisified.getGitHubProfileAsync(username))
-  .then((body) => writeFileAsync(writeFilePath, JSON.stringify(body)));
+    .then((username) => promisified.getGitHubProfileAsync(username))
+    .then((body) => writeFileAsync(writeFilePath, JSON.stringify(body)));
 };
 
 // Export these functions so we can test them
